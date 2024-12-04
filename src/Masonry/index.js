@@ -2,6 +2,10 @@ import PropTypes from "prop-types"
 import React from "react"
 
 class Masonry extends React.Component {
+  constructor() {
+    this.state = { columns: [], childRefs: [], hasDistributed: false };
+  }
+
   componentDidUpdate() {
     if (!this.state.hasDistributed && !this.props.sequential) this.distributeChildren()
   }
